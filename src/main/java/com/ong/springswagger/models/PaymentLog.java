@@ -1,8 +1,5 @@
 package com.ong.springswagger.models;
 
-import java.time.LocalDateTime; // Import the LocalDateTime class
-import java.time.format.DateTimeFormatter; // Import the DateTimeFormatter class
-
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -46,9 +43,7 @@ public class PaymentLog {
 	}
  
 	public void setDatetime(String datetime) {
-		DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-		String formattedDate = datetime.formatted(myFormatObj);
-		this.datetime = formattedDate;
+		this.datetime = datetime;
 	}
 
 	public long getBalance() {
@@ -69,11 +64,9 @@ public class PaymentLog {
 
 	public PaymentLog(Long id, String account_id, String datetime, long balance, String purchase_id) {
 		super();
-		DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-		String formattedDate = datetime.formatted(myFormatObj);
 		this.id = id;
 		this.account_id = account_id;
-		this.datetime = formattedDate;
+		this.datetime = datetime;
 		this.balance = balance;
 		this.purchase_id = purchase_id;
 	}
