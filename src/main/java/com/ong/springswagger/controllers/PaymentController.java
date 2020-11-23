@@ -7,12 +7,10 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -67,15 +65,6 @@ public class PaymentController {
 		return ResponseEntity.created(location).build();
 
 	}
-
-
-//
-	@DeleteMapping("/{id}")
-	public void deleteAccount(@PathVariable long id) {
-		PaymentAccountRepository.deleteById(id);
-	}
-
-//
 	@PostMapping("/create-account")
 	public ResponseEntity<Object> createAccount(@RequestBody PaymentAccount acct) {
 		PaymentAccount savedAccount = PaymentAccountRepository.save(acct);
@@ -110,19 +99,3 @@ public class PaymentController {
 		return acct.get();
 	}
 }
-//	
-//	@PutMapping("/{id}")
-//	public ResponseEntity<Object> updateStudent(@RequestBody Course course, @PathVariable long id) {
-//
-//		Optional<Course> courseOptional = courseRepository.findById(id);
-//
-//		if (!courseOptional.isPresent())
-//			return ResponseEntity.notFound().build();
-//
-//		course.setId(id);
-//		
-//		courseRepository.save(course);
-//
-//		return ResponseEntity.noContent().build();
-//	}
-//}
