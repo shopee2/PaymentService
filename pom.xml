@@ -5,7 +5,7 @@
 	<groupId>com.ong</groupId>
 	<artifactId>payment-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>svc-regsiter</name>
+	<name>payment-service</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
