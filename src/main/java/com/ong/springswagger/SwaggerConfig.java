@@ -25,7 +25,7 @@ public class SwaggerConfig {
 	// Describe your apis
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
-			    .title("Course")
+			    .title("Payment")
 			    .description("This page lists all the rest apis for KMITL Registrars App.")
 			    .version("1.0-SNAPSHOT")
 			    .build();
